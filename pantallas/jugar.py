@@ -6,6 +6,8 @@ def jugar(app, frame):
         button.destroy()
     app.ventana.title("Juego en progreso")
     style = ttk.Style()
+    style.theme_use("clam")  
+    style.configure("X.TLabel", font=("Arial", 30, "bold"), foreground="lightblue", background="purple")
     style.configure("BW.TLabel", font=("Arial", 30, "bold"), foreground="white", background="purple")
     frame.grid(column=0, row=1, padx=10, pady=5, sticky="nsew")
     frame.grid_rowconfigure(0, weight=1)
@@ -29,7 +31,7 @@ def jugar(app, frame):
     def enviar_eleccion(i, r, c): 
         nonlocal turno
         if((turno%2)==0):
-            labels[i].config(text="X")
+            labels[i].config(text="X", style="X.TLabel")
             turno += 1
             tablero[r][c] = "X"
             procesar(tablero, "X", "Jugador X")
