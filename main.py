@@ -5,6 +5,7 @@ class App:
         self.ventana = Tk()
         self.ventana.title("TA-TE-TI")
         self.ventana.geometry("600x600")
+        self.ventana.resizable(False, False)
         style = ttk.Style()
         style.configure("BW.TLabel", font=("Arial", 30, "bold"), foreground="white", background="#630B57")
         titulo = ttk.Label(self.ventana, text="TA-TE-TI", style="BW.TLabel")
