@@ -16,16 +16,27 @@ def jugar(app, frame):
     frame.grid_columnconfigure(2, weight=1)
     labels = {}
     i = 0
+    tablero = [[""] * 3 for _ in range(3)]
     for row in range(3):
         for col in range(3):
-            label = ttk.Label(frame, text="", style="BW.TLabel", width=10)
+            label = ttk.Label(frame, text="", style="BW.TLabel", width=10, anchor="center")
             label.grid(row=row, column=col, padx=3, pady=1, sticky="nsew")
             labels[i] = label 
             label.bind("<Button-1>", lambda e, r=row, c=col, idx=i: enviar_eleccion(idx,r,c))
             i += 1
-    def enviar_eleccion(turno, r, c): 
-        if((turno%2) == 0):
-            labels[turno].config(text="X")
+
+    turno = 0
+    def enviar_eleccion(i, r, c): 
+        nonlocal turno
+        if((turno%2)==0):
+            labels[i].config(text="X")
+            turno += 1
+            tablero[r][c] = "X"
+            if(turno > 4):
+                print(procesar(tablero, "Jugador X"))
         else:
-            labels[turno].config(text="O")
-        procesar(turno, r, c)
+            labels[i].config(text="O")
+            turno += 1
+            tablero[r][c] = "O"
+            if(turno > 4):
+                print(procesar(tablero, "Jugador O"))
