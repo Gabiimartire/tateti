@@ -6,7 +6,7 @@ def jugar(app, frame):
         button.destroy()
     app.ventana.title("Juego en progreso")
     style = ttk.Style()
-    style.configure("BW.TLabel", font=("Arial", 30, "bold"), foreground="white", background="lightgray")
+    style.configure("BW.TLabel", font=("Arial", 30, "bold"), foreground="white", background="purple")
     frame.grid(column=0, row=1, padx=10, pady=5, sticky="nsew")
     frame.grid_rowconfigure(0, weight=1)
     frame.grid_rowconfigure(1, weight=1)
