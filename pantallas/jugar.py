@@ -32,11 +32,9 @@ def jugar(app, frame):
             labels[i].config(text="X")
             turno += 1
             tablero[r][c] = "X"
-            if(turno > 4):
-                print(procesar(tablero, "Jugador X"))
+            procesar(tablero, "X", "Jugador X")
         else:
             labels[i].config(text="O")
             turno += 1
             tablero[r][c] = "O"
-            if(turno > 4):
-                print(procesar(tablero, "Jugador O"))
+            procesar(tablero, "O", "Jugador O")
