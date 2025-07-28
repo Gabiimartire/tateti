@@ -9,8 +9,6 @@ def procesar(tablero, opcion, i):
         gano = 0
         gano3 = 0
         for col in range(len(tablero[row])):
-            #print("tabler[row][col]", tablero[row][col])
-            #print("tabler[col][row]", tablero[col][row])
             if(tablero[row][col] == opcion and tablero[row][col] != ""):
                 gano += 1
             if((col == row) and tablero[row][col] == opcion and tablero[row][col] != ""):
